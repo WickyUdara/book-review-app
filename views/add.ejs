@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs");  -%>
+<div class="container mt-5">
+    <div class="row align-items-start">
+        <div class="col-10 ">
+            <h1>Add a book</h1>
+        </div>
+        <div class="col-2">
+            <h4><a href="/">Return Home</a></h4>
+        </div>
+    </div>
+</div>   
+<div class="container col-6 mt-5">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Book Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="book_name" placeholder="Name">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">ISBN</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="isbn" placeholder="ISBN">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Author Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="author" placeholder="Name">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Write a Review</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="customRange2" class="form-label">Rate book</label>
+        <input type="range" class="form-range" min="0" max="5" name="rate" id="customRange2">
+    </div>
+    <button type="submit" class="btn btn-primary">ADD now</button>
+</div>
+
+<%- include("partials/footer.ejs");  -%>

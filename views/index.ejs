@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs");  -%>
+<div class="container mt-5">
+    <div class="row align-items-start">
+        <div class="col-10 ">
+            <h1>BOOKS I'VE READ</h1>
+        </div>
+        <div class="col-2">
+            <h4><a href="/add">Add a Book</a></h4>
+        </div>
+        
+    </div>
+    <div class="container mt-5">
+        <% books.forEach(function(book){%> 
+            <div class="clearfix">
+                <h2><%= book.name %></h2>
+                <img src="/images/book1.jpg" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                <h4><%=book.author_name%></h4>
+                <h6>ISBN <%= book.isbn %></h6>
+                <p><%= book.review %></p>
+                <div class="row">
+                    <div class="col-1">
+                        <form action="/edit" method="post">
+                            <input type="hidden" name="book_id" value="<%=book.id %>">
+                            <input class="btn btn-secondary" type="submit" value="Edit">
+                        </form>
+                    </div>
+                    <div class="col-1">
+                        <form action="/delete" method="post">
+                            <input type="hidden" name="book_id" value="<%=book.id %>">
+                            <input class="btn btn-danger" type="submit"  value="Delete">
+                        </form>
+                    </div>
+                </div>
+              </div>
+        <%});%>
+    </div>
+
+</div>
+<%- include("partials/footer.ejs");  -%>
+
+    

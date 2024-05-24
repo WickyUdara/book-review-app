@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs");  -%>
+<div class="container mt-5">
+    <div class="row align-items-start">
+        <div class="col-10 ">
+            <h1>Write a review</h1>
+        </div>
+        <div class="col-2">
+            <h4><a href="/">Return Home</a></h4>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <div class="mb-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Choose The Book</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Write a Review</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="customRange2" class="form-label">Rate book</label>
+                <input type="range" class="form-range" min="0" max="5" name="rate" id="customRange2">
+            </div>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </div>
+    </div>
+   
+
+</div>
+<%- include("partials/footer.ejs");  -%>
