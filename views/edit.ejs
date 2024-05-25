@@ -10,27 +10,30 @@
     </div>
 </div>   
 <div class="container col-6 mt-5">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Book Name</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="book_name" placeholder="Name" value="<%= book.name%>">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">ISBN</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="isbn" placeholder="ISBN" value="<%= book.isbn%>">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Author Name</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="author" placeholder="Name" value="<%= book.author_name%>">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Write a Review</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"><%= book.review%></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="customRange2" class="form-label">Rate book</label>
-        <input type="range" class="form-range" min="0" max="5" name="rate" id="customRange2" value="">
-    </div>
-    <button type="submit" class="btn btn-primary">Update</button>
+    <form action="/update" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Book Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Name" value="<%= book.name%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">ISBN</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="isbn" placeholder="ISBN" value="<%= book.isbn%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Author Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="author" placeholder="Name" value="<%= book.author_name%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Write a Review</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"><%= book.review%></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="customRange2" class="form-label">Rate book</label>
+            <input type="range" class="form-range" min="0" max="5" name="rating" id="customRange2" value="<%=book.rating%>">
+        </div>
+        <input type="hidden" name="id" value="<%=book.id%>">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
 </div>
 
 <%- include("partials/footer.ejs");  -%>
